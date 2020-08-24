@@ -1,0 +1,168 @@
+body {
+    margin: 0;
+    display: grid;
+    font-family: "M PLUS 1p";
+    grid-template: 
+        "header header header " 100px
+        "------ ------ ------ " 20px
+        "left   write  account" 50px
+        "left   center right  " 1fr
+        "left   aside  right  " 80px
+        "footer footer footer " 200px
+        / 150px 1fr 150px; 
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+header {
+    grid-area: header;
+    text-align: center;
+}
+
+header a img {
+    height: 100px;
+}
+
+.write {
+    grid-area: write;
+    text-align: center;
+}
+
+.write button {
+    width: 250px;
+    height: 50px;
+    font-size: 20px;
+    background-color: white;
+    border: 1px solid grey;
+    margin: 0 auto;
+    font-family: "M PLUS 1p";
+}
+
+.write button:hover {
+    cursor: pointer;
+}
+
+.account {
+    grid-area: account;
+    cursor: pointer;
+    transition: .3s;
+    z-index: 4;
+}
+
+nav {
+    width: 270px;
+    position: fixed;
+    top: 170px;
+    right: -270px;
+    z-index: 3;
+    transition: .3s;
+    background-color: #313131;
+    margin: 0 auto;
+    height: 100%;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    font-size: 17px;
+    background-color: #313131;
+    padding: 10px 20px;
+    text-align: center;
+    transition: .3s;
+}
+
+nav li:hover {
+    background-color: black;
+}
+
+nav a {
+    color: white;
+}
+
+nav.active {
+    right: 0;
+}
+
+main {
+    grid-area: center;
+    text-align: center;
+}
+
+
+
+.left {
+    grid-area: left;
+}
+
+.right {
+    grid-area: right;
+}
+
+aside {
+    grid-area: aside;
+    margin: 0 auto;
+}
+
+aside table {
+    width: 500px;
+}
+
+aside table th {
+    border: 1px solid #313131;
+}
+
+footer {
+    grid-area: footer;
+    background-color: #313131;
+    position: relative;
+}
+
+footer small {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    color: white;
+}
+
+
+
+@media screen and (max-width:1317px) {
+    body {
+        width: 100%;
+        grid-template: 
+            "header " 100px
+            "------ " 20px
+            "account" 50px
+            "write  " 50px
+            "center " 1fr
+            "aside  " 80px
+            "footer " 200px
+            / 100%;
+        margin: 0 auto;
+        min-width: 1000px;
+    }
+
+    .account {
+        text-align: center;
+    }
+
+}
+
+@media screen and (max-width:1070px) {
+    body {
+        width: 100%;
+    }
+    
+    main img {
+        width: 215px;
+    }
+}
